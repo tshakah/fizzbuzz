@@ -15,28 +15,28 @@ defmodule Fizz do
     :ok
   end
 
-  defp do_buzz(n, i, fizz_trigger, buzz_trigger, fizz_n, buzz_n)
-      when fizz_n == fizz_trigger and buzz_n == buzz_trigger do
+  defp do_buzz(n, i, fizz_trigger, buzz_trigger, fizz_i, buzz_i)
+      when fizz_i == fizz_trigger and buzz_i == buzz_trigger do
     IO.puts("Fizzbuzz")
 
     do_buzz(n, i + 1, fizz_trigger, buzz_trigger, 1, 1)
   end
 
-  defp do_buzz(n, i, fizz_trigger, buzz_trigger, fizz_n, buzz_n) when fizz_n == fizz_trigger do
+  defp do_buzz(n, i, fizz_trigger, buzz_trigger, fizz_i, buzz_i) when fizz_i == fizz_trigger do
     IO.puts("Fizz")
 
-    do_buzz(n, i + 1, fizz_trigger, buzz_trigger, 1, buzz_n + 1)
+    do_buzz(n, i + 1, fizz_trigger, buzz_trigger, 1, buzz_i + 1)
   end
 
-  defp do_buzz(n, i, fizz_trigger, buzz_trigger, fizz_n, buzz_n) when buzz_n == buzz_trigger do
+  defp do_buzz(n, i, fizz_trigger, buzz_trigger, fizz_i, buzz_i) when buzz_i == buzz_trigger do
     IO.puts("Buzz")
 
-    do_buzz(n, i + 1, fizz_trigger, buzz_trigger, fizz_n + 1, 1)
+    do_buzz(n, i + 1, fizz_trigger, buzz_trigger, fizz_i + 1, 1)
   end
 
-  defp do_buzz(n, i, fizz_trigger, buzz_trigger, fizz_n, buzz_n) do
+  defp do_buzz(n, i, fizz_trigger, buzz_trigger, fizz_i, buzz_i) do
     IO.puts(i)
 
-    do_buzz(n, i + 1, fizz_trigger, buzz_trigger, fizz_n + 1, buzz_n + 1)
+    do_buzz(n, i + 1, fizz_trigger, buzz_trigger, fizz_i + 1, buzz_i + 1)
   end
 end
